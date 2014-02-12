@@ -24,5 +24,11 @@
 
   (fact (box puzzle 0) => [8 \_ 2 \_ 3 \_ \_ \_ 6])
   (fact (box puzzle 8) => [7 \_ \_ \_ 2 \_ 3 \_ 9])
+
+  (fact (count (rows puzzle)) => 9)
+  (fact (count (columns puzzle)) => 9)
+  (fact (count (boxes puzzle)) => 9)
+
+  (fact (count (units puzzle)) => 27)
 )
 
