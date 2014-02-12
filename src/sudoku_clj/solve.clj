@@ -1,5 +1,5 @@
 (ns sudoku-clj.solve
-  (:require [sudoku-clj.grid :refer [units]]))
+  (:require [sudoku-clj.grid :refer [units first-empty-pos setval]]))
 
 (defn- duplicates
   "Extract a seq of all duplicate values"
@@ -17,3 +17,17 @@
   "Return true if the provided sudoku grid is valid"
   [grid]
   (every? valid-unit? (units grid)))
+
+(defn solved?
+  [puzzle]
+  (and (valid-grid? puzzle) (not (some #{\_} puzzle))))
+
+(defn fill-first-empty
+  [puzzle]
+  (let [pos (first-empty-pos puzzle)]
+  (map #(setval puzzle pos %) (range 1 10))))
+
+(defn solve-one-step
+  [puzzle]
+  (let [pos (first-empty-pos puzzle)]
+  (filter valid-grid? (fill-first-empty puzzle))))

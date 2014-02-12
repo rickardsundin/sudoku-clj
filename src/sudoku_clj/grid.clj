@@ -8,6 +8,11 @@
   (let [[col row] pos]
     (+ col (* row 9))))
 
+(defn- pos
+  "Translate grid index to position coordinates"
+  [idx]
+  (vec [(mod idx 9) (quot idx 9)]))
+
 (defn lookup
   "Get value on position in grid"
   [grid pos]
@@ -69,3 +74,7 @@
   "Get all units (rows, columns and boxes) from a grid"
   [grid]
   (concat (rows grid) (columns grid) (boxes grid)))
+
+(defn first-empty-pos
+  [puzzle]
+  (pos (.indexOf puzzle \_)))

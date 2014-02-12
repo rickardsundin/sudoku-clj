@@ -16,6 +16,9 @@
 (facts "about Sudoku grid"
   (fact (count empty-grid) => 81)
 
+  (fact (first-empty-pos empty-grid) => [0 0])
+  (fact (first-empty-pos puzzle) => [1 0])
+
   (fact (row puzzle 0) => [8 \_  2 \_ \_  9 \_ \_ 1])
   (fact (row puzzle 8) => [1 \_ \_  8 \_ \_  3 \_  9])
 
