@@ -29,12 +29,11 @@
 
 (defn solve-one-step
   [puzzle]
-  (let [pos (first-empty-pos puzzle)]
-  (filter valid-grid? (fill-first-empty puzzle))))
+  (filter valid-grid? (fill-first-empty puzzle)))
 
 (defn solve
   [puzzle]
-  (loop [puzzles (solve-one-step puzzle)]
-    (if (solved? (first puzzles))
-      (first puzzles)
-      (recur (concat (solve-one-step (first puzzles)) (rest puzzles))))))
+  (loop [[p & ps] (cons puzzle ())]
+    (if (solved? p)
+      p
+      (recur (concat (solve-one-step p) ps)))))
