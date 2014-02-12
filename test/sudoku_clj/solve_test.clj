@@ -42,5 +42,7 @@
   (fact (solved? empty-grid) => false)
   (fact (solved? puzzle) => false)
   (fact (solved? solved-puzzle) => true)
+
+  (fact (solve puzzle) => solved-puzzle)
 )
 

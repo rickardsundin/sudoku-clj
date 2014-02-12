@@ -31,3 +31,10 @@
   [puzzle]
   (let [pos (first-empty-pos puzzle)]
   (filter valid-grid? (fill-first-empty puzzle))))
+
+(defn solve
+  [puzzle]
+  (loop [puzzles (solve-one-step puzzle)]
+    (if (solved? (first puzzles))
+      (first puzzles)
+      (recur (concat (solve-one-step (first puzzles)) (rest puzzles))))))
