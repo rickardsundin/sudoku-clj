@@ -21,5 +21,8 @@
 
   (fact (column puzzle 0) => [8 \_ \_ 9 \_ \_ 2 \_ 1])
   (fact (column puzzle 8) => [1 \_ 3 \_ \_ 8 \_ \_ 9])
+
+  (fact (box puzzle 0) => [8 \_ 2 \_ 3 \_ \_ \_ 6])
+  (fact (box puzzle 8) => [7 \_ \_ \_ 2 \_ 3 \_ 9])
 )
 
