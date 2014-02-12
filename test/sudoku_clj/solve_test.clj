@@ -30,8 +30,8 @@
   (fact (valid-unit? [1 2 3 4 5 6 7 8 9 ]) => true)
   (fact (valid-unit? [1 2 3 4 5 6 7 1 9]) => false)
 
-  (fact (valid-grid? empty-grid) => true)
-  (fact (valid-grid? puzzle) => true)
+  (fact (valid-puzzle? empty-grid) => true)
+  (fact (valid-puzzle? puzzle) => true)
 )
 
 (facts "about sudoku solving"

@@ -66,5 +66,6 @@
   (concat (rows grid) (columns grid) (boxes grid)))
 
 (defn first-empty
+  "Return the vector index of the first empty field"
   [puzzle]
   (.indexOf puzzle \_))
