@@ -1,5 +1,5 @@
 (ns sudoku-clj.solve
-  (:require [sudoku-clj.grid :refer [units first-empty-pos setval]]))
+  (:require [sudoku-clj.grid :refer [units first-empty]]))
 
 (defn- duplicates
   "Extract a seq of all duplicate values"
@@ -24,8 +24,8 @@
 
 (defn fill-first-empty
   [puzzle]
-  (let [pos (first-empty-pos puzzle)]
-  (map #(setval puzzle pos %) (range 1 10))))
+  (let [idx (first-empty puzzle)]
+  (map #(assoc puzzle idx %) (range 1 10))))
 
 (defn solve-one-step
   [puzzle]

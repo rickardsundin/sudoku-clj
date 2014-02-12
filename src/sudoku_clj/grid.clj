@@ -8,20 +8,10 @@
   (let [[col row] pos]
     (+ col (* row 9))))
 
-(defn- pos
-  "Translate grid index to position coordinates"
-  [idx]
-  (vec [(mod idx 9) (quot idx 9)]))
-
 (defn lookup
   "Get value on position in grid"
   [grid pos]
   (get grid (idx pos)))
-
-(defn setval
-  "Return grid updated with value on position"
-  [grid pos value]
-  (assoc grid (idx pos) value))
 
 (defn row
   "Get a row from sudoku grid"
@@ -75,6 +65,6 @@
   [grid]
   (concat (rows grid) (columns grid) (boxes grid)))
 
-(defn first-empty-pos
+(defn first-empty
   [puzzle]
-  (pos (.indexOf puzzle \_)))
+  (.indexOf puzzle \_))
