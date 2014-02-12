@@ -1,4 +1,4 @@
 sudoku-clj
 ==========
 
-A sodoku solver implemented in clojure
+A sudoku solver implemented in clojure
