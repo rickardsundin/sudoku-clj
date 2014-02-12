@@ -8,10 +8,15 @@
   (let [[col row] pos]
     (+ col (* row 9))))
 
-(defn- lookup
+(defn lookup
   "Get value on position in grid"
   [grid pos]
   (get grid (idx pos)))
+
+(defn setval
+  "Return grid updated with value on position"
+  [grid pos value]
+  (assoc grid (idx pos) value))
 
 (defn row
   "Get a row from sudoku grid"

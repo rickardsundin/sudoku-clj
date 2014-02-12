@@ -32,3 +32,7 @@
   (fact (count (units puzzle)) => 27)
 )
 
+(facts "about setting values"
+  (fact (lookup (setval puzzle [0 0] 5) [0 0]) => 5)
+)
+
